@@ -15,4 +15,5 @@ public interface IAlmacen {
     TipoTapiceria buscarTapiceria(String id);
 
     ArrayList<Vehiculo> listarVehiculos();
+    ArrayList<TipoRueda> listarStockRuedas();
 }
