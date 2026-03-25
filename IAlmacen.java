@@ -16,4 +16,5 @@ public interface IAlmacen {
 
     ArrayList<Vehiculo> listarVehiculos();
     ArrayList<TipoRueda> listarStockRuedas();
+    ArrayList<Trabajador> listarTrabajadores();
 }

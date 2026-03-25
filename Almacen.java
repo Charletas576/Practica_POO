@@ -97,4 +97,9 @@ public class Almacen implements IAlmacen {
     public ArrayList<TipoRueda> listarStockRuedas() {
         return iRuedas;
     }
+
+    @Override
+    public ArrayList<Trabajador> listarTrabajadores() {
+        return lTrabajadores;
+    }
 }
