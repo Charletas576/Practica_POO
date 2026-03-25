@@ -5,18 +5,17 @@ import java.util.Date;
 public class Planificador {
 
     private Almacen miAlmacen;
-    private MonTurismo miMontaje;
+    private TipoMontaje miMontaje;
     private ArrayList<Operario> operarios = new ArrayList<>();
 
-    public Planificador(Vehiculo vActual, TipoMotor mActual, TipoTapiceria taActual, ArrayList<TipoRueda> rActuales) {
-        miAlmacen = new Almacen();
-        miMontaje = new MonTurismo(vActual, mActual, taActual, rActuales);
+    public Planificador(Almacen miAlmacen, TipoMontaje miMontaje) {
+        this.miAlmacen = miAlmacen;
+        this.miMontaje = miMontaje;
     }
 
-    public void simulacion(String color, int nPlazas, float tara, int pma, String id) {
-        Turismo miTurismo = new Turismo(color, nPlazas, tara, pma, id);
+    public void simulacion(Vehiculo miVehiculo) {
         setOperarios();
-        miMontaje.setVActual(miTurismo);
+        miMontaje.setVActual(miVehiculo);
         miMontaje.asignarOperarios(operarios);
         int segundosTotales = 0;
         while (miMontaje.getFActual() < 4) {
@@ -26,7 +25,7 @@ public class Planificador {
 
         System.out.println("Simulación finalizada. Tiempo total de montaje: " + segundosTotales + " segundos.");
 
-        miAlmacen.nuevoVehiculo(miTurismo);
+        miAlmacen.nuevoVehiculo(miVehiculo);
     }
 
     public void setOperarios() {
