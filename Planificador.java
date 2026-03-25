@@ -27,11 +27,10 @@ public class Planificador {
 
     public void setOperarios(ArrayList<Trabajador> lTrabajadores) {
         while (operarios.size() < 4) {
-            for (Trabajador o : lTrabajadores) {
-                if (o.getPuesto() == "Operario") {
-                    
-                }
-            }
+            // Saco la posición aleatoria entre los trabajadores operarios
+            Math.random();
+            // Reviso si la posición está ya en el array de operarios
+            // Si no lo está, lo añado
         }
     }
 }
