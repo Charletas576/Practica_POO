@@ -30,14 +30,10 @@ public class Planificador {
     }
 
     public void setOperarios() {
-        Operario op1 = new Operario("Juan", "García", "12345678A", "Calle A, 1", 100000001L, "Operario", 1200, new Date(), (int) (Math.random() * 21));
-        Operario op2 = new Operario("Ana", "López", "87654321B", "Calle B, 2", 200000002L, "Operario", 1200, new Date(), (int) (Math.random() * 21));
-        Operario op3 = new Operario("Pedro", "Pérez", "11223344C", "Calle C, 3", 300000003L, "Operario", 1200, new Date(), (int) (Math.random() * 21));
-        Operario op4 = new Operario("Lucía", "Sanz", "44332211D", "Calle D, 4", 400000004L, "Operario", 1200, new Date(), (int) (Math.random() * 21));
-
-        operarios.add(op1);
-        operarios.add(op2);
-        operarios.add(op3);
-        operarios.add(op4);
+        for (int i = 0; i < 4; i++) {
+            int montajesAleatorios = (int)(Math.random() * 20); 
+            Operario op = new Operario("Op" + i, "Apellido", "DNI"+i, "Dir", 123, "Operario", 1000, new Date(), montajesAleatorios);
+            operarios.add(op);
+        }
     }
 }
